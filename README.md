@@ -1,17 +1,30 @@
-﻿# Dungeon Survivor
+# Dungeon Survivor
 
-Dungeon Survivor is a scalable React + TypeScript + Vite project for a canvas-based roguelike survival game. It ships with a playable MVP and a modular engine layout that can grow into a fuller survivor-style game.
+A canvas-based roguelike survival prototype built with React,
+TypeScript, Vite, and Zustand.
 
-## MVP
+## What changed
 
-- React 19 + TypeScript + Vite app shell
-- Canvas rendering driven by `requestAnimationFrame`
-- Zustand stores for game state, UI state, and settings
-- WASD movement
-- Enemy spawning and chase AI
-- Projectile attacks aimed by cursor or nearest target
-- Player, enemy, projectile, item, and obstacle collision
-- XP pickup, leveling, upgrades, pause, restart, and game-over flow
+- Single React app shell with dedicated home and game screens
+- Modular canvas engine split into entities, systems, managers, and
+  world data
+- Zustand stores for gameplay state, UI state, and player settings
+- Stable `requestAnimationFrame` game loop with keyboard and pointer
+  input handling
+- Responsive game layout with top HUD moved outside the stage so the
+  map remains visible
+- GitHub Pages-ready Vite build configuration for repository-based
+  deployment
+
+## Gameplay
+
+- WASD player movement
+- Auto-fired projectiles aimed by cursor or nearest enemy
+- Enemy spawning with simple chase AI
+- Collision handling for player, enemies, projectiles, items, and
+  obstacles
+- XP pickup, level-up choices, score tracking, pause, restart, and
+  game-over flow
 
 ## Project Structure
 
@@ -116,17 +129,33 @@ npm install
 npm run dev
 ```
 
-## Verification
+## Quality checks
 
 ```bash
 npm run check
 npm run test
 npm run build
+npm run verify
 ```
 
-## Next Steps
+`npm run verify` runs typecheck, lint, tests, and production build in
+sequence.
 
-- Add sprite sheets, animation states, and audio assets
-- Expand skills into reusable effect archetypes
-- Introduce procedural map generation and richer wave scripting
-- Layer in save-driven meta progression through `saveManager`
+## Build and deploy
+
+```bash
+npm run build
+npm run deploy
+```
+
+If GitHub Pages is enabled for the `gh-pages` branch, the deployed game
+can be served from:
+
+`https://chunwei0312.github.io/Big-Game/`
+
+## Next steps
+
+- Add sprites, animation states, and sound assets
+- Expand combat into reusable weapons and skill archetypes
+- Introduce richer waves, map generation, and progression systems
+- Add CI workflow automation when the repository process is ready
