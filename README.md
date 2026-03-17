@@ -26,7 +26,7 @@ TypeScript, Vite, and Zustand.
 - XP pickup, level-up choices, score tracking, pause, restart, and
   game-over flow
 
-## Project Structure
+## Project structure
 
 ```text
 dungeon-survivor/
@@ -148,8 +148,19 @@ npm run build
 npm run deploy
 ```
 
-If GitHub Pages is enabled for the `gh-pages` branch, the deployed game
-can be served from:
+GitHub Actions deploy workflow:
+[.github/workflows/deploy.yml](.github/workflows/deploy.yml)
+
+Automatic deploy:
+
+- Set GitHub Pages source to `GitHub Actions`
+- Push to `main` to build and deploy automatically
+
+Manual deploy:
+
+- Run `npm run deploy` to publish `dist/` to the `gh-pages` branch
+
+The deployed game can be served from:
 
 `https://chunwei0312.github.io/Big-Game/`
 
